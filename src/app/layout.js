@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import DeafaultValues from "@/components/Default-Values/DeafaultValues";
 import { Inter } from "next/font/google";
 import StoreProvider from "./StoreProvider";
 
@@ -14,7 +15,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+          <DeafaultValues />
+          {children}
+        </StoreProvider>
       </body>
     </html>
   );
